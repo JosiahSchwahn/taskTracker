@@ -1,5 +1,134 @@
-body{
+body {
+    font-family: 'Nunito';font-size: 22px;
+    font-weight:lighter;
+    margin: 0px;
+    color: #494949;
+}
 
-    color: red;
+
+h1{
+
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+    
 
 }
+
+.page-container{
+    display: flex;
+
+}
+
+.left-nav-bar{
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 30vw;
+    background-color: #ffffff;
+    padding: 10px;
+    
+
+}
+
+.right-main-application{
+
+    height: 100vh;
+    width: 70vw;
+    background-color: #f8f8f8;
+}
+
+.task-tracker-container{
+
+    display: flex;
+    justify-content: center;   
+}
+
+.task-tracker-company{
+
+    display: flex;
+    align-items: center;
+    
+}
+
+.task-tracker-main-text{
+
+    margin:20px;
+
+}
+
+.nav-buttons-container{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.dashboard-nav, .analytics-nav, .about-this-app-nav, .settings-nav{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    align-items: center; /*centers Icon and names*/
+    
+
+}
+
+.dashboard, .analytics, .about-this-app, .settings{
+
+    margin-left: 30px;
+
+
+}
+
+.profile-container{
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+
+}
+
+.profile{
+
+    color: black;
+    font-size: 16px;;
+
+}
+
+
+.account-status{
+
+    color: 8d8d9c;
+    font-size: 12px;;
+
+
+}
+
+
+.nav-buttons{
+
+    font-weight: 600; /* semi bold font weight = 600
+                                100 – Thin
+                            200 – Extra Light (Ultra Light)
+                            300 – Light
+                            400 – Normal
+                            500 – Medium
+                            600 – Semi Bold (Demi Bold)
+                            700 – Bold
+                            800 – Extra Bold (Ultra Bold)
+                            900 – Black (Heavy)"*/
+
+    color: #8d8d9c;
+    font-size: 20px;;
+    display: flex;
+    flex-direction: column;
+    
+
+
+}
+
