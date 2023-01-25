@@ -1,8 +1,11 @@
+
+/* Global and Main Tag Styling */
 body {
     font-family: 'Nunito';font-size: 22px;
     font-weight:lighter;
     margin: 0px;
     color: #494949;
+    min-height: 100vh;
 }
 
 
@@ -15,8 +18,13 @@ h1{
 
 }
 
+/* Page container, left nav bar, and right side main application formatting and styling */
+
 .page-container{
     display: flex;
+    height: 100vh;
+    width: 100vw;
+    
 
 }
 
@@ -25,10 +33,10 @@ h1{
     display: flex;
     flex-direction: column;
 
-    height: 100vh;
-    width: 30vw;
+    
+    width: 20vw;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 30px;
     
 
 }
@@ -40,7 +48,8 @@ h1{
     background-color: #f8f8f8;
 }
 
-.task-tracker-container{
+/* Task Tracker left side containers and styling */
+.task-tracker-logo-container{
 
     display: flex;
     justify-content: center;   
@@ -66,50 +75,6 @@ h1{
 
 }
 
-
-.dashboard-nav, .analytics-nav, .about-this-app-nav, .settings-nav{
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    align-items: center; /*centers Icon and names*/
-    
-
-}
-
-.dashboard, .analytics, .about-this-app, .settings{
-
-    margin-left: 30px;
-
-
-}
-
-.profile-container{
-
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-
-}
-
-.profile{
-
-    color: black;
-    font-size: 16px;;
-
-}
-
-
-.account-status{
-
-    color: 8d8d9c;
-    font-size: 12px;;
-
-
-}
-
-
 .nav-buttons{
 
     font-weight: 600; /* semi bold font weight = 600
@@ -128,6 +93,61 @@ h1{
     display: flex;
     flex-direction: column;
     
+    
+
+}
+
+
+
+
+.dashboard-nav, .analytics-nav, .about-this-app-nav, .settings-nav{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-bottom: 25px;;
+    align-items: center; /*centers Icon and names*/
+    
+
+}
+.dashboard, .analytics, .about-this-app, .settings{
+
+    margin-left: 30px;
+
+}
+
+.profile-container{
+
+
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    
+    
+
+    
+    
+
+}
+
+.profile{
+
+    color: black;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    
+
+}
+
+.profile-name-and-status{
+    margin-left: 10px;
+
+}
+
+
+.account-status{
+
+    color: 8d8d9c;
+    font-size: 12px;;
 
 
 }
