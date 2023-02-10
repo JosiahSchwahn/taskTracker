@@ -1,0 +1,230 @@
+
+
+:root{
+
+    --radio-button-size: 18px;
+
+}
+
+
+/* ! Global and Main Tag Styling */
+body {
+    font-family: 'Nunito';font-size: 20px;
+    font-weight:500;
+    margin: 0px;
+    color: #494949;
+    min-height: 100vh;
+    /* No Scroll*/
+    overflow: hidden;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+p{
+    margin: 0px
+}
+
+button{
+
+    border: none;
+    cursor:pointer;
+    
+}
+
+svg{
+    display: block;
+    margin: auto;
+}
+
+
+
+/*! Modal Container Styling */
+
+.modal-container{
+
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    padding: 30px;
+    border-radius: 8px;
+
+    height: 500px;
+    width: 400px;;
+
+}
+
+/* * Modal Flex Item Styling */
+
+
+.modal-header{
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.exit-button{
+
+    background-color: #e71d350a;
+    border-radius: 100%;
+    height: 35px;
+    width: 35px;
+    color: rgb(228, 149, 80);
+
+}
+
+.category-type{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+div.category-type-logo{
+
+    background-color: rgba(255, 141, 34, 0.120);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-self:center;
+}
+
+.category-type-text{
+    font-size: 14px;
+
+}
+
+input[type=text]#task-name {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(227, 227, 227, 0.246);
+    
+    width: 100%;
+
+    padding-top: 10px;
+    padding-bottom:  10px;
+    padding-left: 30px;
+
+    margin-top: 80px;
+    margin-bottom: 10px;
+
+}
+
+
+
+
+input[type=text]#task-name::placeholder{
+    color:rgba(139, 139, 139, 0.546);
+    
+}
+
+
+/* ! Type Radio Button Selection Styling */
+
+.type-selection{
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    justify-content: space-around;
+
+}
+
+.div-radio {
+    display: inline-block;
+    
+    
+}
+
+.div-radio input {
+    border: 0.15em solid currentColor;
+    display: block;
+    margin: 0px auto;    
+
+    width: var(--radio-button-size);
+    height: var(--radio-button-size);
+
+   
+}
+
+.div-radio label {
+    display:block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color:#737373;
+    
+
+    margin-top: 15px;;
+
+    
+}
+
+
+/* ! Days per week styling */
+
+.days-per-week-container{
+
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+form.days-per-week{
+    font-family: inherit;
+    font-size: 16px;
+    color: black;
+ 
+}
+
+.days-per-week-text{
+
+    font-family: inherit;
+    font-size: 12px;
+    color: #737373;
+    
+}
+
+
+/* ! Buttons */
+
+
+.footer-buttons{
+
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.modal-close-button, .modal-save-button{
+    border: none;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 8px;
+}
+
+.modal-close-button{
+    background: white;
+    color: rgb(78,179,236);
+
+}
+
+.modal-save-button{
+
+    background: rgb(78,179,236);
+    color: white;
+    margin-left: 10px;;
+}

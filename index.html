@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./style/style.css">
-    <script src="./javascript/javascript.js"></script>
+    <script src="./javascript/javascript.js" defer></script>
 
 
     <title> Task Tracker </title>
@@ -17,6 +17,8 @@
 </head>
 <body>
     <div class="page-container">
+
+        <!-- ! Left Main application Nav Bar -->
 
         <div class="left-nav-bar">
             <div class="task-tracker-logo-container">
@@ -106,9 +108,111 @@
             
         </div>
 
+       <!-- ! MAIN APPLICATION STYLING AND FORMAT-->
+
         <div class="right-main-application">
 
             <div class="task-preview">Task Preview</div>
+
+            <div class="task-navigation">
+
+                <div class="task-navigation-buttons">
+
+                    <button class="tasks-btn app-nav-button">Tasks</button>
+                    <button class="overview-btn app-nav-button">Overview</button>
+                    <button class="account-btn app-nav-button">Account</button>
+
+                </div>
+                <!-- TODO: OVERFLOW WRAPPING FOR FLEX ITEMS IN TASK NAVIGATION-->
+                <div class="task-counter">Tasks 5/5</div>
+
+                <button class= "add-task-button"> 
+                    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.71387 1V11" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 6H10.4286" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="add-task-text">Add Task </div>
+
+                </button>
+               
+            </div>
+
+            
+            
+
+
+
+            <div class="week-of-the-year"> <strong>Week of the Year:</strong>  January 8th - January 14th </div>
+
+            <div class="task-items">
+
+                <div class="task-item-containers" id="1">
+                    <div class="task-name">JavaScript Programming</div>
+                    <div class="category-type">Work</div>
+                    <div class="days-per-week">5 Days</div>
+                    <div class="current-progress"> <em>*Progress Bar Component*</em> </div>
+
+                    <!-- ! Checkbox form for if the task was completed or not today-->
+                    <div class="completed-today">
+                        <form class="forum">   
+                            <input type="checkbox" id="sausage" name="topping" value="sausage">
+                            <label for="sausage">completed today</label>
+                        </form>
+                        
+                    </div>
+
+                    <div class="fav-settings-container">
+
+                        <div class="favorite-item">
+
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 9.24L14.81 8.62L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27L18.18 21L16.55 13.97L22 9.24ZM12 15.4L8.24 17.67L9.24 13.39L5.92 10.51L10.3 10.13L12 6.1L13.71 10.14L18.09 10.52L14.77 13.4L15.77 17.68L12 15.4Z" fill="#F2EB38" fill-opacity="0.6"/>
+                                </svg>
+                                
+    
+                        </div>
+                        <div class="meatball-menu">
+    
+                            <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.4874 0.512567C12.804 -0.170848 11.696 -0.170848 11.0126 0.512567C10.3291 1.19598 10.3291 2.30402 11.0126 2.98744C11.696 3.67085 12.804 3.67085 13.4874 2.98744C14.1709 2.30405 14.1709 1.19601 13.4874 0.512567Z" fill="#4EB3EC"/>
+                                <path d="M8.23744 0.512567C7.55402 -0.170848 6.44598 -0.170848 5.76257 0.512567C5.07915 1.19598 5.07915 2.30402 5.76257 2.98744C6.44598 3.67085 7.55402 3.67085 8.23744 2.98744C8.92085 2.30405 8.92085 1.19601 8.23744 0.512567Z" fill="#4EB3EC"/>
+                                <path d="M2.98744 0.512567C2.30402 -0.170848 1.19598 -0.170848 0.512564 0.512567C-0.170852 1.19598 -0.170852 2.30402 0.512564 2.98744C1.19598 3.67085 2.30402 3.67085 2.98744 2.98744C3.67085 2.30405 3.67085 1.19601 2.98744 0.512567Z" fill="#4EB3EC"/>
+                                </svg>
+                                
+    
+                        </div>
+
+
+                    </div>
+                    
+
+
+                    
+
+
+                </div>
+                <div class="task-item-containers" id="2">Item #2</div>
+                <div class="task-item-containers" id="3">Item #3</div>
+                <div class="task-item-containers" id="4">Item #4</div>
+                <div class="task-item-containers" id="5">Item #5</div>
+
+
+            </div>
+
+            <div class="submit-daily-task"> 
+                
+                <button class="submit-daily-task-button">
+                        <svg width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 0L0 24H40L24 0Z" fill="white" fill-opacity="0.54"/>
+                        <path d="M7.61905 5.71429L0 24H26.2857L7.61905 5.71429Z" fill="white" fill-opacity="0.56"/>
+                        <path d="M29.7143 8.7619L3.04761 23.619L40 24L29.7143 8.7619Z" fill="#FDFDFD"/>
+                        </svg>
+                    Submit Daily Tasks
+                </button> 
+            </div>
+
+            
+
 
         </div>
 
