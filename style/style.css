@@ -1,3 +1,10 @@
+:root{
+
+    --radio-button-size: 18px;
+    --modal-container-height:500px;
+    --modal-container-width:400px; 
+
+}
 
 /* ! Global and Main Tag Styling */
 body {
@@ -8,6 +15,9 @@ body {
     min-height: 100vh;
     /* No Scroll*/
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
 
 }
 p{
@@ -19,6 +29,16 @@ button{
     border: none;
     cursor:pointer;
     
+}
+
+
+
+.modal-frame-container{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -80,7 +100,7 @@ button{
 .nav-buttons-container{
 
     display: flex;
-    justify-content: center;
+   
 
 }
 
@@ -290,3 +310,4 @@ button{
     justify-content: space-around;
 
 }
+

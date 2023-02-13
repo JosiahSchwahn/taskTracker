@@ -1,10 +1,17 @@
-/* Query selectors*/
+/* Query selectors ES6 */
 
-const addTaskBtn = document.querySelector(".add-task-button");
+const addTaskBtn = document.querySelector("button.add-task-button");
+const modalPage = document.querySelector(".modal-page")
+const closeModal = document.querySelector(".modal-close-button")
 
-// Add an event listener to the button
-addTaskBtn.addEventListener('click', function() {
-    alert('Button was clicked!');
-  });
-  
+addTaskBtn.addEventListener(`click`, function(){
+        
+});
+
+
+
+
+
+
+
 
