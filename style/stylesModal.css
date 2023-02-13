@@ -9,7 +9,7 @@
 
 }
 
-svg{
+div.fav-settings-container > svg{
 
     display: block;
     margin: auto;
@@ -25,17 +25,16 @@ svg{
     background-color: rgba(0, 0, 0, .3);
     position: absolute;
     /* centers horizonally */
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    display: none ;
-
+   
+    display: none;
 }
 
-.modal-page .show{
 
+.modal-page.show{
+   display: flex;
 }
 
 
@@ -91,7 +90,7 @@ div.category-type-logo{
     width: 40px;
     display: flex;
     align-items: center;
-    justify-self:center;
+    justify-content: center;
 }
 
 .category-type-text{
