@@ -13,6 +13,7 @@ addTaskBtn.addEventListener(`click`, function(){
     modalPage.classList.add('show');
 });
 
+
 [closeModal,modalExitButton].forEach(function(element) {
     element.addEventListener("click", function() {
         modalPage.classList.remove('show');

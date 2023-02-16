@@ -30,6 +30,7 @@ div.fav-settings-container > svg{
     align-items: center;
    
     display: none;
+    transition: 1.4s ease-in-out;
 }
 
 
