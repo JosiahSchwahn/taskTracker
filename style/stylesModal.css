@@ -14,7 +14,14 @@ div.fav-settings-container > svg{
     display: block;
     margin: auto;
 
+
 }
+
+.fav-settings-container{
+    gap: 10px;
+}
+
+
 
 .modal-page{
     font-family: 'Nunito';font-size: 20px;
@@ -28,7 +35,6 @@ div.fav-settings-container > svg{
     display: flex;
     justify-content: center;
     align-items: center;
-   
     display: none;
     transition: 1.4s ease-in-out;
 }
@@ -174,12 +180,22 @@ input[type=text]#task-name::placeholder{
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+    gap: 5px;
+
+    font-size: 14px;;
    
 }
 
+select#days-per-week-frequency{
+
+    max-width: 80px;
+    max-height: 30px;
+}
+
+
+
 form.days-per-week{
     font-family: inherit;
-    font-size: 16px;
     color: black;
  
 }
