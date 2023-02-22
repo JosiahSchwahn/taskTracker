@@ -18,13 +18,17 @@ const categoryTypes = {
     discovery: 'Discovery'
 }
 /*object constructor for taskItems */
-function Task(name,categoryType, daysPerWeek){
-    this.name = name;
-    this.category = categoryType;
-    this.weekFrequency = daysPerWeek;
-    this.completedToday = false;
-    this.favorite = false;
+
+class Task{
+    constructor(){
+        this.name = undefined
+        this.category = undefined;
+        this.weekFrequency = undefined;
+        this.completedToday = false;
+        this.favorite = false;
+    }
 }
+
 
 addTaskBtn.addEventListener(`click`, function(){
     modalPage.classList.add('show');
@@ -35,21 +39,23 @@ addTaskBtn.addEventListener(`click`, function(){
         modalPage.classList.remove('show');
     });
 });
-/* form eventListener, creates data form object and then passes it it to 
-task object to be stored in taskItems array */
-formInput.addEventListener('submit', (e) =>{
-    e.preventDefault();
+
+
+formInput.addEventListener('submit', (event) =>{
+    event.preventDefault();
     const formData = new FormData(formInput);
     const taskItem = new Task();
-    formData.forEach((value, key) => (taskItem[key] = value));
+    formData.forEach((value, key) => {
+        if(key === "weekFrequency"){
+            taskItem[key] = parseInt(value);
+        } else{        /*console.log(key);*/
+            (taskItem[key] = value)
+        }   
+    });
     taskItems.push(taskItem);
     console.log(taskItems);
+    modalPage.classList.remove('show');
 });
-    
-
- 
-
-
 
 
 
