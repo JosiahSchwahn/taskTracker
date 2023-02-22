@@ -6,20 +6,7 @@ const closeModal = document.querySelector(".modal-close-button")
 const modalExitButton = document.querySelector("button.exit-button")
 const formInput = document.querySelector(".task-form")
 
-
-addTaskBtn.addEventListener(`click`, function(){
-   
-    modalPage.classList.add('show');
-});
-
-
-[closeModal,modalExitButton].forEach(function(element) {
-    element.addEventListener("click", function() {
-        modalPage.classList.remove('show');
-    });
-});
 /* Task Displays - global scope */
-
 var taskItems = []
 
 /*Enum for category types */
@@ -30,18 +17,24 @@ const categoryTypes = {
     community: "Community",
     discovery: 'Discovery'
 }
-
-
+/*object constructor for taskItems */
 function Task(name,categoryType, daysPerWeek){
     this.name = name;
     this.category = categoryType;
     this.weekFrequency = daysPerWeek;
-
     this.completedToday = false;
     this.favorite = false;
 }
 
+addTaskBtn.addEventListener(`click`, function(){
+    modalPage.classList.add('show');
+});
 
+[closeModal,modalExitButton].forEach(function(element) {
+    element.addEventListener("click", function() {
+        modalPage.classList.remove('show');
+    });
+});
 /* form eventListener, creates data form object and then passes it it to 
 task object to be stored in taskItems array */
 formInput.addEventListener('submit', (e) =>{
@@ -54,18 +47,7 @@ formInput.addEventListener('submit', (e) =>{
 });
     
 
-
-/*
-    const newData = [];
-
-    realData.forEach((val) => {
-    let obj = {};
-    val.forEach(v => obj[v.key] = v.value);
-    newData.push(obj);
-    });
-*/
-
-    
+ 
 
 
 
