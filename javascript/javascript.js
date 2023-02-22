@@ -18,20 +18,9 @@ addTaskBtn.addEventListener(`click`, function(){
         modalPage.classList.remove('show');
     });
 });
+/* Task Displays - global scope */
 
-/* TO DO 
-
-    - constructor for task objects
-    - Store objects in an array // locally
-    - Add / Delete / Edit Tasks
-
-    - User email/password authentication
-    - MongoDB document learning to store tasks in DB documents
-*/
-
-/* Task Displays */
-
-let taskItems = []
+var taskItems = []
 
 /*Enum for category types */
 const categoryTypes = {
@@ -43,26 +32,27 @@ const categoryTypes = {
 }
 
 
-function Task(){
-    this.name = "";
-    this.category = categoryTypes[0];
-    this.weekFrequency = 0;
+function Task(name,categoryType, daysPerWeek){
+    this.name = name;
+    this.category = categoryType;
+    this.weekFrequency = daysPerWeek;
+
     this.completedToday = false;
     this.favorite = false;
 }
 
 
-/* form eventListener */
-
+/* form eventListener, creates data form object and then passes it it to 
+task object to be stored in taskItems array */
 formInput.addEventListener('submit', (e) =>{
     e.preventDefault();
     const formData = new FormData(formInput);
-    let taskItem = new Task();
-    console.log(typeof formData);
-   
-    for(data of formData){
-        console.log(data);
-    }
+    const taskItem = new Task();
+    formData.forEach((value, key) => (taskItem[key] = value));
+    taskItems.push(taskItem);
+    console.log(taskItems);
+});
+    
 
 
 /*
@@ -76,7 +66,7 @@ formInput.addEventListener('submit', (e) =>{
 */
 
     
-});
+
 
 
 
