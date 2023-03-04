@@ -98,52 +98,7 @@ button{
 
 }
 
-.nav-buttons-container{
 
-    display: flex;
-   
-
-}
-
-.nav-buttons{
-
-    font-weight: 600; /* semi bold font weight = 600
-                                100 – Thin
-                            200 – Extra Light (Ultra Light)
-                            300 – Light
-                            400 – Normal
-                            500 – Medium
-                            600 – Semi Bold (Demi Bold)
-                            700 – Bold
-                            800 – Extra Bold (Ultra Bold)
-                            900 – Black (Heavy)"*/
-
-    color: #8d8d9c;
-    font-size: 20px;;
-    display: flex;
-    flex-direction: column;
-    
-    
-
-}
-
-
-
-
-.dashboard-nav, .analytics-nav, .about-this-app-nav, .settings-nav{
-    display: flex;
-    flex-direction: row;
-    margin-top: 25px;
-    margin-bottom: 25px;;
-    align-items: center; /*centers Icon and names*/
-    
-
-}
-.dashboard, .analytics, .about-this-app, .settings{
-
-    margin-left: 30px;
-
-}
 
 .profile-container{
 
@@ -152,11 +107,6 @@ button{
     flex-direction: row;
     margin-top: auto;
     
-    
-
-    
-    
-
 }
 
 .profile{
@@ -273,7 +223,7 @@ button{
 
 .task-items{
 
-    height: min(500px, 100%);
+    height: min(480px, 100%);
     width: 100%;
 
 }
