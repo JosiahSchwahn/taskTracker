@@ -40,6 +40,7 @@ addTaskBtn.addEventListener(`click`, function(){
     modalPage.classList.add('show');
 });
 
+
 [closeModal,modalExitButton].forEach(function(element) {
     element.addEventListener("click", function() {
         modalPage.classList.remove('show');
@@ -65,10 +66,19 @@ formInput.addEventListener('submit', (event) =>{
     modalPage.classList.remove('show');
 
     /* new item */
-    taskItemContainer.appendChild(createTaskItem(taskItem))
-   
+    taskItemContainer.appendChild(createTaskItem(taskItem));
+    /* adds an event listener to the button to be able to edit and delete the task */
+    setAddEventListener();
+    updateTextCounter();
+    
 
 });
+
+function setAddEventListener(){
+    const settingsButton  = document.querySelectorAll(".fav-settings-container");
+    console.log(settingsButton);
+    
+}git config --global user.email
 
 function updateTextCounter(){
 
@@ -81,13 +91,12 @@ function updateTextCounter(){
 function createTaskItem(taskItem){
     /* creating DOM structure for a taskItem */
     if (taskItems.length > 5){
-
         alert("The maximum amount of tasks is 5")
-
     } else {
 
         const newTaskContainer = document.createElement("div");
         newTaskContainer.classList.add("task-item-containers");
+        newTaskContainer.setAttribute("id", `task-item-#${taskItems.length}`);
 
         const taskName = document.createElement("div");
         taskName.classList.add("task-name")
@@ -108,6 +117,7 @@ function createTaskItem(taskItem){
 
         const favSettingsContainer = document.createElement("div");
         favSettingsContainer.classList.add("fav-settings-container")
+
         newTaskContainer.appendChild(favSettingsContainer);
         const svg = createSVG("svg", {width:"14",height:"4", viewbox:"0 0 14 4"});
         //Create a path in SVG's namespace
@@ -122,20 +132,11 @@ function createTaskItem(taskItem){
         svg.appendChild(svgPath2);
         svg.appendChild(svgPath3);
         favSettingsContainer.appendChild(svg);
-
         /* Updates the task counter */
-        updateTextCounter();
-
-
+    
         return newTaskContainer;
     }
 }
-
-
-
-
-
-
 
 
 
