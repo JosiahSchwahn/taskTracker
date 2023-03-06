@@ -5,11 +5,26 @@ const closeModal = document.querySelector(".modal-close-button")
 const modalExitButton = document.querySelector("button.exit-button")
 const formInput = document.querySelector(".task-form")
 const taskItemContainer = document.querySelector(".task-items")
+const settingsMeatballMenu = document.querySelector(".star-edit-delete-container");
 
 
-/* Task Displays - global scope */
+/* saves cursor positon and passes to css variabls */
+const pos = { x : 0, y : 0 };
+const saveCursorPosition = function(x, y) {
+    pos.x = (x / window.innerWidth).toFixed(5);
+    pos.y = (y / window.innerHeight).toFixed(5);
+    document.documentElement.style.setProperty('--x', pos.x);
+    document.documentElement.style.setProperty('--y', pos.y);
+}
+document.addEventListener('mousemove', event => { 
+    saveCursorPosition(event.clientX, event.clientY); 
+})
+
+/* Task Displays Array- global scope */
 var taskItems = []
 
+
+/* creates SVG and sets attribute for DOM */
 function createSVG(n, v) {
     n = document.createElementNS("http://www.w3.org/2000/svg", n);
     for (var p in v)
@@ -36,6 +51,7 @@ class Task{
     }
 }
 
+/*open and close buttons for add task modal */
 addTaskBtn.addEventListener(`click`, function(){
     modalPage.classList.add('show');
 });
@@ -48,6 +64,7 @@ addTaskBtn.addEventListener(`click`, function(){
 });
 
 
+/* submit button for new task item, adds task object to array and creates additional dom elements + updates text counter */
 formInput.addEventListener('submit', (event) =>{
     event.preventDefault();
     const formData = new FormData(formInput);
@@ -67,19 +84,18 @@ formInput.addEventListener('submit', (event) =>{
 
     /* new item */
     taskItemContainer.appendChild(createTaskItem(taskItem));
-    /* adds an event listener to the button to be able to edit and delete the task */
-    setAddEventListener();
-    updateTextCounter();
-    
+    /* adds an event listener to the button to be able to edit and delete the task
+    adds an event listener to the correct item depending on how long the task list current is */
+    const settingButton = document.querySelectorAll(".fav-settings-container")
+    settingButton[(taskItems.length)-1].addEventListener("click", function() {
+       settingsMeatballMenu.style.display = "flex";
+    });
+    updateTextCounter(); 
 
 });
 
-function setAddEventListener(){
-    const settingsButton  = document.querySelectorAll(".fav-settings-container");
-    console.log(settingsButton);
-    
-}git config --global user.email
 
+/* function to update task counter displayed on main page */
 function updateTextCounter(){
 
     const taskCounter = document.querySelector(".task-counter")
@@ -87,6 +103,7 @@ function updateTextCounter(){
 
 }
 
+/* checks if the taskItems list is full or not, then creates a task item while manipulating the DOM */
 
 function createTaskItem(taskItem){
     /* creating DOM structure for a taskItem */
@@ -137,6 +154,7 @@ function createTaskItem(taskItem){
         return newTaskContainer;
     }
 }
+
 
 
 

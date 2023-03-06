@@ -3,6 +3,16 @@
     --radio-button-size: 18px;
     --modal-container-height:500px;
     --modal-container-width:400px; 
+    --box-shadow:1.1px 1.1px 1.9px rgba(0, 0, 0, 0.014),
+    2.9px 2.9px 5.3px rgba(0, 0, 0, 0.024),
+    5.8px 5.8px 11.4px rgba(0, 0, 0, 0.033),
+    12px 12px 24.1px rgba(0, 0, 0, 0.045),
+    33px 33px 76px rgba(0, 0, 0, 0.07);
+
+    --x: 0px;
+    --y: 0px;
+
+
 
 }
 
@@ -194,8 +204,7 @@ button{
     background-color: #4EB3EC;
     border-radius: 4px;
     margin-left: auto;
-    margin-top: auto;
-    
+    margin-top: auto;   
 }
 
 
@@ -207,6 +216,7 @@ button{
 
 .task-counter{
     margin-left: 20px;
+    font-size: 1.5rem;
     
 }
 
@@ -247,12 +257,7 @@ button{
     margin-bottom: 30px;
     border-radius: 4px;
     
-    box-shadow:
-    1.1px 1.1px 1.9px rgba(0, 0, 0, 0.014),
-    2.9px 2.9px 5.3px rgba(0, 0, 0, 0.024),
-    5.8px 5.8px 11.4px rgba(0, 0, 0, 0.033),
-    12px 12px 24.1px rgba(0, 0, 0, 0.045),
-    33px 33px 76px rgba(0, 0, 0, 0.07);
+    box-shadow:var(--box-shadow);
 
 }
 
@@ -260,6 +265,54 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    cursor: pointer;
+}
 
+/* ! Edit/Delete container styling */
+
+.star-edit-delete-container{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-between;
+    width: 120px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(9px) saturate(200%);
+    -webkit-backdrop-filter: blur(9px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.071);
+	transform: translate(calc(-1% + 1100px * var(--x)), calc(10% + 1000px * var(--y)));
+  
+}
+.star-container,.edit-container,.delete-container{
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
+.star-text-container, .edit-text-container, .delete-text-container{
+
+    margin-left: .75rem;
+    
+}
+
+.star-container{
+    background-color: rgba(255, 247, 0, 0.066);
+    color: rgb(255, 247, 0);
+}
+
+.edit-container{
+    background-color: rgba(14, 187, 255, 0.045);
+    color: rgb(14, 187, 255);
+}
+
+.delete-container{
+    background-color: rgba(253, 8, 8, 0.071);
+    color: rgb(253, 8, 8);
 }
 
