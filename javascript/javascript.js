@@ -6,19 +6,24 @@ const modalExitButton = document.querySelector("button.exit-button")
 const formInput = document.querySelector(".task-form")
 const taskItemContainer = document.querySelector(".task-items")
 const settingsMeatballMenu = document.querySelector(".star-edit-delete-container");
+const settingExitButton = document.querySelector(".setting-close-button-text");
 
 
-/* saves cursor positon and passes to css variabls */
+/* saves cursor position and passes to css variable to be used for absolute positioning */
 const pos = { x : 0, y : 0 };
+let settingsBeingDisplayed = false;
 const saveCursorPosition = function(x, y) {
-    pos.x = (x / window.innerWidth).toFixed(5);
-    pos.y = (y / window.innerHeight).toFixed(5);
-    document.documentElement.style.setProperty('--x', pos.x);
-    document.documentElement.style.setProperty('--y', pos.y);
+    pos.x = x;
+    pos.y = y;
+    document.documentElement.style.setProperty('--x-cursor-position', pos.x);
+    document.documentElement.style.setProperty('--y-cursor-position', pos.y);
 }
 document.addEventListener('mousemove', event => { 
-    saveCursorPosition(event.clientX, event.clientY); 
-})
+    if(settingsBeingDisplayed == false){
+        saveCursorPosition(event.clientX, event.clientY); 
+    }     
+});
+
 
 /* Task Displays Array- global scope */
 var taskItems = []
@@ -48,10 +53,11 @@ class Task{
         this.weekFrequency = undefined;
         this.completedToday = false;
         this.favorite = false;
+        this.settingsModalActive = false;
     }
 }
 
-/*open and close buttons for add task modal */
+/*open and close buttons for add task modal and task setting menu */
 addTaskBtn.addEventListener(`click`, function(){
     modalPage.classList.add('show');
 });
@@ -62,6 +68,13 @@ addTaskBtn.addEventListener(`click`, function(){
         modalPage.classList.remove('show');
     });
 });
+
+settingExitButton.addEventListener('click', function(){
+    settingsMeatballMenu.style.display = "none";
+    settingsBeingDisplayed = false;
+});
+
+
 
 
 /* submit button for new task item, adds task object to array and creates additional dom elements + updates text counter */
@@ -88,7 +101,10 @@ formInput.addEventListener('submit', (event) =>{
     adds an event listener to the correct item depending on how long the task list current is */
     const settingButton = document.querySelectorAll(".fav-settings-container")
     settingButton[(taskItems.length)-1].addEventListener("click", function() {
-       settingsMeatballMenu.style.display = "flex";
+       if(!settingsBeingDisplayed){
+            settingsMeatballMenu.style.display = "flex";
+            settingsBeingDisplayed = true;
+       }
     });
     updateTextCounter(); 
 

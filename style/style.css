@@ -9,8 +9,8 @@
     12px 12px 24.1px rgba(0, 0, 0, 0.045),
     33px 33px 76px rgba(0, 0, 0, 0.07);
 
-    --x: 0px;
-    --y: 0px;
+    --x-cursor-position: 0;
+    --y-cursor-position: 0;
 
 
 
@@ -27,6 +27,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
     
 
 }
@@ -282,8 +283,11 @@ button{
     backdrop-filter: blur(9px) saturate(200%);
     -webkit-backdrop-filter: blur(9px) saturate(200%);
     background-color: rgba(17, 25, 40, 0.071);
-	transform: translate(calc(-1% + 1100px * var(--x)), calc(10% + 1000px * var(--y)));
-  
+    top: calc(var(--y-cursor-position)*1px);
+    left: calc(var(--x-cursor-position)*1px);
+
+    
+    
 }
 .star-container,.edit-container,.delete-container{
     display: flex;
@@ -302,17 +306,30 @@ button{
 }
 
 .star-container{
-    background-color: rgba(255, 247, 0, 0.066);
+    background-color: rgba(255, 247, 0, 0.200);
     color: rgb(255, 247, 0);
 }
 
 .edit-container{
-    background-color: rgba(14, 187, 255, 0.045);
+    background-color: rgba(14, 187, 255, 0.200);
     color: rgb(14, 187, 255);
 }
 
 .delete-container{
-    background-color: rgba(253, 8, 8, 0.071);
+    background-color: rgba(253, 8, 8, 0.200);
     color: rgb(253, 8, 8);
 }
 
+
+.setting-close-button{
+    margin-left: auto;
+}
+.setting-close-button-text{
+
+    font-size: 1rem;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: rgba(126, 126, 126, 0.25);
+
+}
