@@ -62,7 +62,7 @@
 
 <div class="star-edit-delete-container">
 
-        <div class="setting-close-button">
+        <div class="setting-close-button">`
             <button type="reset" class="setting-close-button-text">X</button>
         </div>
 
@@ -89,22 +89,4 @@
             <div class="delete-text-container">Delete</div>
         
         </button>
-    </div>
-
-    function createSettingModal(){
-
-    const starEditDeleteContainer = document.createElement("div");
-    starEditDeleteContainer.classList.add("star-edit-delete-container");
-
-    const settingCloseButtonContainer = document.createElement("div");
-    settingCloseButtonContainer.classList.add("setting-close-button");
-    starEditDeleteContainer.appendChild(settingCloseButtonContainer);
-
-    const settingCloseButton = document.createElement("button");
-    settingCloseButton.classList.add("setting-close-button-text");
-    settingCloseButton.textContent = "X";
-    settingCloseButtonContainer.appendChild(settingCloseButton);
-
-    return starEditDeleteContainer;
-
-}
+            </div>

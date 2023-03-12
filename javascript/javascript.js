@@ -6,7 +6,6 @@ const modalExitButton = document.querySelector("button.exit-button")
 const formInput = document.querySelector(".task-form")
 const taskItemContainer = document.querySelector(".task-items")
 const settingsMeatballMenu = document.querySelector(".star-edit-delete-container");
-const settingExitButton = document.querySelector(".setting-close-button-text");
 const editButton = document.querySelector(".edit-container");
 const deleteButton = document.querySelector(".delete-container");
 
@@ -77,10 +76,6 @@ addTaskBtn.addEventListener(`click`, function(){
     });
 });
 
-settingExitButton.addEventListener('click', function(){
-    settingsMeatballMenu.style.display = "none";
-    settingsBeingDisplayed = false;
-});
 
 /* submit button for new task item, adds task object to array and creates additional dom elements + updates text counter */
 formInput.addEventListener('submit', (event) =>{
@@ -115,9 +110,6 @@ formInput.addEventListener('submit', (event) =>{
        }
     });
 
-    
-
- 
     updateTextCounter(); 
 
 });
@@ -137,6 +129,34 @@ function createDOMElement(elementType, classList, textContent){
     return newDiv;
 
 }
+
+/* Creates and returns the DOM structure to be used on a task creation */
+function settingTaskItemModal(){
+
+    const starEditDeleteContainer = createDOMElement("div", "star-edit-delete-container");
+
+    const settingCloseDiv = createDOMElement("div", "setting-close-button");
+
+    const settingCloseButton = createDOMElement("button", "setting-close-button-text", "X");
+
+    starEditDeleteContainer.appendChild(settingCloseDiv)
+    settingCloseDiv.appendChild(settingCloseButton);
+
+
+    const starContainer = createDOMElement("button", "star-container")
+    const starModalSVG = createSVG("svg", {width:"14", height:"14" ,viewBox:"0 0 8 8", fill: "none"});
+    var starModalPath = document.createElementNS("http://www.w3.org/2000/svg", 'path'); 
+    starModalSVG.setAttributeNS("null", "d","M5 7.635L8.09 9.5L7.27 5.985L10 3.62L6.405 3.315L5 0L3.595 3.315L0 3.62L2.73 5.985L1.91 9.5L5 7.635Z");
+    starModalSVG.setAttributeNS(null, "fill","#FFD600");
+    
+    starContainer.appendChild(starModalSVG);
+    starModalSVG.appendChild(starModalPath) ;
+
+
+    return starEditDeleteContainer;
+
+}
+
 
 /* checks if the taskItems list is full or not, then creates a task item while manipulating the DOM */
 
@@ -158,6 +178,12 @@ function createTaskItem(taskItem){
 
         const daysPerWeek = createDOMElement("div", "days-per-week", taskItem.weekFrequency)
         newTaskItem.appendChild(daysPerWeek);
+
+        const settingModal = settingTaskItemModal();
+        newTaskItem.appendChild(settingModal);
+
+
+
 
         const favSettingsContainer = document.createElement("div");
         favSettingsContainer.classList.add("fav-settings-container");
