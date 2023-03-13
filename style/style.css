@@ -9,11 +9,6 @@
     12px 12px 24.1px rgba(0, 0, 0, 0.045),
     33px 33px 76px rgba(0, 0, 0, 0.07);
 
-    --x-cursor-position: 0;
-    --y-cursor-position: 0;
-
-
-
 }
 
 /* ! Global and Main Tag Styling */
@@ -283,12 +278,13 @@ button{
     backdrop-filter: blur(9px) saturate(200%);
     -webkit-backdrop-filter: blur(9px) saturate(200%);
     background-color: rgba(17, 25, 40, 0.071);
-    top: calc(var(--y-cursor-position)*1px);
-    left: calc(var(--x-cursor-position)*1px);
-
-    
-    
+  
 }
+
+.class-flex{
+    display: flex;
+}
+
 .star-container,.edit-container,.delete-container{
     display: flex;
     box-sizing: border-box;
