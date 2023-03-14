@@ -1,8 +1,7 @@
 First attempt at building the front-end of a task tracking application. 
 Used HTML5, CSS3, and vanilla JS.
 Skills learned:
-- HTML5, CSS3, JS Basics
-- 
+- HTML5, CSS3, JS basics
 - Flex vs Grid
 - CSS custom properties
 - Node.js and NPM
@@ -20,4 +19,4 @@ Skills learned:
   
 Problem with this project/future learning:
 - The main problem with this project that made me retire it (for now). The app was too tightly coupled. The UI and logic were tied together.
-More thought needs to be put into the design patterns and independent systems to ensure scalability and reliability.
+More consideration into design patterns and independent systems to ensure scalability and reliability.
