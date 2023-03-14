@@ -1,7 +1,8 @@
 First attempt at building the front-end of a task tracking application. 
 Used HTML5, CSS3, and vanilla JS.
 Skills learned:
-- JS Basics
+- HTML5, CSS3, JS Basics
+- 
 - Flex vs Grid
 - CSS custom properties
 - Node.js and NPM
