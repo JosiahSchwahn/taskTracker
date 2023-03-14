@@ -54,9 +54,11 @@ class Task{
     }
     switchFavorite(){
         if(!this.favorite){
-            this.favorite === true;
+            console.log("Item is now favorited");
+            this.favorite = true;
         }else{
-            this.favorite === false;
+            console.log("Item is now not a favorited");
+            this.favorite = false;
         }
     }
 
@@ -103,12 +105,40 @@ formInput.addEventListener('submit', (event) =>{
 
     
     let taskSettingsButton = document.querySelector(`#task-item-${taskItem.getTaskNumber()}`);
-    taskSettingsButton.addEventListener("click", function(){
-        alert(`This is ${taskItem.getTaskNumber()}`)
-    });
-    
-    updateTextCounter(); 
+    let taskSettingModal = document.querySelector(`#modal-${taskItem.getTaskNumber()}`);
 
+    let taskExitButton = document.querySelector(`#modal-${taskItem.getTaskNumber()} .setting-close-button`);
+    taskExitButton.addEventListener("click", function(){
+        taskSettingModal.style.display = "none";
+    })
+
+    taskSettingsButton.addEventListener("click", function(){
+        alert(`This is ${taskItem.getTaskNumber()} and the Task name is ${taskItem.getName()}`);
+        taskSettingModal.style.display = "flex";
+    });
+
+    let taskFavoriteButton = document.querySelector(`#modal-${taskItem.getTaskNumber()} button.star-container`);
+    let taskEditButton = document.querySelector(`#modal-${taskItem.getTaskNumber()} button.edit-container`);
+    let taskDeleteButton = document.querySelector(`#modal-${taskItem.getTaskNumber()} button.delete-container`);
+
+    taskFavoriteButton.addEventListener("click", function(event){
+        taskItem.switchFavorite();
+        event.stopPropagation();
+    });
+
+    taskEditButton.addEventListener("click", function(event){
+        alert("editing")
+        event.stopPropagation();
+    });
+
+
+    taskDeleteButton.addEventListener("click", function(event){
+        alert("deleting");
+        taskItems.splice(taskItem.getTaskNumber(),1);
+        taskItems.forEach((item) => console.log(item));
+        event.stopPropagation();
+    });    
+    updateTextCounter(); 
 });
 
 
@@ -239,6 +269,7 @@ function createTaskItem(taskItem){
 
 
         const settingModal = settingTaskItemModal();
+        settingModal.setAttribute("id", `modal-${taskItems.length}`);
         newTaskItem.appendChild(settingModal);
 
 

@@ -281,10 +281,6 @@ button{
   
 }
 
-.class-flex{
-    display: flex;
-}
-
 .star-container,.edit-container,.delete-container{
     display: flex;
     box-sizing: border-box;
